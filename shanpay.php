@@ -5,7 +5,7 @@
 	<title>支付跳转中...</title>
 </head>
 <?php
-require_once("shanpayconfig.php");
+require_once("../shanpayconfig.php");
 require_once("lib/shanpayfunction.php");
 
 		
