@@ -2,8 +2,8 @@
 /* *
  * 功能：服务器异步通知页面
  */
-require_once("dbconf.php");
-require_once("shanpayconfig.php");
+require_once("../dbconf.php");
+require_once("../shanpayconfig.php");
 require_once("lib/shanpayfunction.php");
 //计算得出通知验证结果
 $shanNotify = md5VerifyShan($_REQUEST['out_order_no'],$_REQUEST['total_fee'],$_REQUEST['trade_status'],$_REQUEST['sign'],$shan_config['key'],$shan_config['partner']);
