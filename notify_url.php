@@ -52,7 +52,7 @@ if($shanNotify) {//验证成功
 				$stmt->bindParam(':expire_time', $expire_time);
 				$stmt->execute();
 				//记录订单
-				$sql = "INSERT INTO orders (total_fee, trade_no, out_order_no, username, pay_time) VALUES(?,?,?,?,?)";
+				$sql = "INSERT INTO orders (total_fee, trade_no, out_order_no, uname, pay_time) VALUES(?,?,?,?,?)";
 				$stmt = $conn->prepare($sql);
 				$stmt->bindParam(1, $price);
 				$stmt->bindParam(2, $trade_no);
