@@ -3,7 +3,7 @@
 /* *
  * 功能：服务器同通知页面
  */
-require_once("shanpayconfig.php");
+require_once("../shanpayconfig.php");
 require_once("lib/shanpayfunction.php");
 ?>
 
@@ -84,7 +84,7 @@ else {
 
 <?php
 function orderinfo($out_trade_no, $trade_no, $price){
-	require_once("dbconf.php");
+	require_once("../dbconf.php");
 	if (substr($out_trade_no, -5, 4) != "9999") {
 		return "支付成功";
 	}
