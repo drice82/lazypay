@@ -88,7 +88,7 @@ function orderinfo($out_trade_no, $trade_no, $price){
 	if (substr($out_trade_no, -5, 4) != "9999") {
 		return "支付成功";
 	}
-	$type = substr($out_trade_no, -5, 4);
+	$type = substr($out_trade_no, -5, 5);
 
 	try{
 		$conn = new PDO("mysql:host=$host; dbname=$db_name", $username, $password);
