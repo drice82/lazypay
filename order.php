@@ -1,3 +1,34 @@
+<?php
+require_once("../dbconf.php");
+
+try{
+	$conn = new PDO("mysql:host=$host; dbname=$db_name", $username, $password);
+	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
+
+	$sql = "SELECT * FROM members WHERE enable=0 AND  type='99991'";
+	$stmt = $conn->query($sql);
+	$stock99991 = $stmt->rowCount();
+
+	$sql = "SELECT * FROM members WHERE enable=0 AND  type='99992'";
+	$stmt = $conn->query($sql);
+	$stock99992 = $stmt->rowCount();
+
+	$sql = "SELECT * FROM members WHERE enable=0 AND  type='99993'";
+	$stmt = $conn->query($sql);
+	$stock99993 = $stmt->rowCount();
+
+	$sql = "SELECT * FROM members WHERE enable=0 AND  type='99994'";
+	$stmt = $conn->query($sql);
+	$stock99994 = $stmt->rowCount();
+	}
+catch (PDOException $e) {
+	echo $e->getMessage();
+}
+$conn=null;
+
+?>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -35,7 +66,7 @@ function orderDetail(obj){
   var index = obj.selectedIndex;
   switch(index){
     case 1:
-    txt.innerHTML="OVH机房100M带宽，2T硬盘，130元／月";
+    txt.innerHTML="OVH机房100M带宽，100G硬盘，50元／月";
     break;
 
     case 2:
@@ -82,10 +113,10 @@ function orderDetail(obj){
       <td   class="td_border">
         <select onchange="orderDetail(this)" id="opt">
         <option value ="">--请选择--</option>
-        <option value ="99991">PT盒子-型号1</option>
-        <option value ="99992">PT盒子-型号2</option>
-        <option value ="99993">PT盒子-型号3</option>
-        <option value ="99994">PT盒子-型号4</option>
+        <option <?PHP if ($stock99991 == 0){echo 'disabled="disabled"';} ?>value ="99991">PT盒子-型号1  库存<?php echo $stock99991 ?>个  </option>
+        <option <?PHP if ($stock99992 == 0){echo 'disabled="disabled"';} ?> value ="99992">PT盒子-型号2  库存<?php echo $stock99992 ?>个 </option>
+        <option <?PHP if ($stock99993 == 0){echo 'disabled="disabled"';} ?> value ="99993">PT盒子-型号3  库存<?php echo $stock99993 ?>个 </option>
+        <option <?PHP if ($stock99994 == 0){echo 'disabled="disabled"';} ?> value ="99994">PT盒子-型号4  库存<?php echo $stock99994 ?>个 </option>
         </select>
 
       </td>
