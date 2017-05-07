@@ -88,6 +88,7 @@ function orderinfo($out_trade_no, $trade_no, $price){
 	if (substr($out_trade_no, -5, 4) != "9999") {
 		return "支付成功";
 	}
+	$type = substr($out_trade_no, -5, 4);
 
 	try{
 		$conn = new PDO("mysql:host=$host; dbname=$db_name", $username, $password);
@@ -113,14 +114,14 @@ function orderinfo($out_trade_no, $trade_no, $price){
 			return "地址：". $uaddr. "   用户名：". $uname. "   密码：". $upwd;
 		}
 		//判断库存量
-		$sql = "SELECT * FROM members WHERE enable = 0";
+		$sql = "SELECT * FROM members WHERE enable = 0 AND type='$type'";
 		$stmt = $conn->query($sql);
 		if ($stmt->rowCount() ==0){
 			return "无库存，请联系退款";
 		}
 
 		//列出盒子信息
-		$sql = "SELECT * FROM members WHERE enable = 0 limit 1";
+		$sql = "SELECT * FROM members WHERE enable = 0 AND type='$type' limit 1";
 		$stmt = $conn->query($sql);
 		$row = $stmt->fetch();
 			$uname = $row['username'];
