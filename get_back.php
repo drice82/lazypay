@@ -76,6 +76,11 @@ function orderDetail(obj){
     <tr>
       <td height="50"  colspan="3"class="td_title"><span class="title">订单系统-找回订单信息</span></td>
     </tr>
+	  
+    <tr>
+      <td   height="50" colspan="3" class="td_border"><font color="#FF0000"></font>在这里可以找回您24小时内的订单信息。</td>
+    </tr>
+	  
     <tr>
       <td   height="50"  class="td_border"><font color="#FF0000">* </font>您下单时选择的商品是：</td>
       <td   class="td_border">
