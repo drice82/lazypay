@@ -63,16 +63,16 @@ function orderDetail(obj){
 <br />
 
 <table border="0" cellpadding="0" cellspacing="0" class="tb_style">
-  <form action="shanpay.php" method="post" name="shanpayment" target="_blank" id="shanpayment">
+
     <tr>
       <td width="210"   height="50"  class="td_border"><a href="http://www.lazypt.net"><img src="images/logo.png" border="0"></a></td>
       <td width="412"  class="td_border">&nbsp;</td>
       <td width="178"  class="td_border"><strong><a href="http://www.lazypt.net">官方网站</a></strong></td>
     </tr>
-  </form>
+
 </table>
 <table border="0" cellpadding="0" cellspacing="0" class="tb_style">
-  <form name="shanpayment" action="get_back_info.php" method="post" target="_blank" >
+  <form name="shanpayment" action="get_back_info.php" method="post" >
     <tr>
       <td height="50"  colspan="3"class="td_title"><span class="title">雷击霹雳-订单系统</span></td>
     </tr>
