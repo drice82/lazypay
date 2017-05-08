@@ -34,13 +34,8 @@ require_once("lib/shanpayfunction.php");
     <tr>
       <td   height="50" colspan="3" class="td_border"> <font color="#FF0000">
 <?php
-
-
 	$out_trade_no = $_REQUEST['get_back_no'];
-
-
 	echo orderinfo($out_trade_no);
-
 ?>
 
 </font>
@@ -73,7 +68,7 @@ function orderinfo($out_trade_no){
 		
 		//是否为24小时内已有订单
 		$ordertime=time()-86400;
-		$sql = "SELECT * FROM orders WHERE out_order_no LIKE %'$out_trade_no' AND pay_time>'$ordertime'";
+		$sql = "SELECT * FROM orders WHERE out_order_no LIKE '%$out_trade_no' AND pay_time>'$ordertime'";
 		$stmt = $conn->query($sql);
 		if ($stmt->rowCount() !=0){
 			$row = $stmt->fetch();
@@ -83,7 +78,10 @@ function orderinfo($out_trade_no){
 
 			return "地址：". $uaddr. "   用户名：". $uname. "   密码：". $upwd;
 		}
-		
+		else {
+			return "无记录";
+	
+		}
 
 	}
 	catch (PDOException $e) {
