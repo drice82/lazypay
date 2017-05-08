@@ -29,7 +29,7 @@ require_once("lib/shanpayfunction.php");
 <table border="0" cellpadding="0" cellspacing="0" class="tb_style">
 
     <tr>
-      <td height="50"  colspan="3"class="td_title"><span class="title">雷击霹雳-订单系统</span></td>
+      <td height="50"  colspan="3"class="td_title"><span class="title">订单系统-找回订单信息</span></td>
     </tr>
     <tr>
       <td   height="50" colspan="3" class="td_border"> <font color="#FF0000">
