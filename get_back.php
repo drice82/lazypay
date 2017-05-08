@@ -1,34 +1,3 @@
-<?php
-require_once("../dbconf.php");
-
-try{
-	$conn = new PDO("mysql:host=$host; dbname=$db_name", $username, $password);
-	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
-
-	$sql = "SELECT * FROM members WHERE enable=0 AND  type='99991'";
-	$stmt = $conn->query($sql);
-	$stock99991 = $stmt->rowCount();
-
-	$sql = "SELECT * FROM members WHERE enable=0 AND  type='99992'";
-	$stmt = $conn->query($sql);
-	$stock99992 = $stmt->rowCount();
-
-	$sql = "SELECT * FROM members WHERE enable=0 AND  type='99993'";
-	$stmt = $conn->query($sql);
-	$stock99993 = $stmt->rowCount();
-
-	$sql = "SELECT * FROM members WHERE enable=0 AND  type='99994'";
-	$stmt = $conn->query($sql);
-	$stock99994 = $stmt->rowCount();
-	}
-catch (PDOException $e) {
-	echo $e->getMessage();
-}
-$conn=null;
-
-?>
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -55,8 +24,7 @@ function postData(){
 function checkstr(str){
   var opt = document.getElementById('opt');
   str ='00000000000'+str;
-	str = str.substr(str.length-11);
-	str = "SO"+String(Date.parse(new Date())/1000)+str+opt.value;
+	str = str.substr(str.length-11)+opt.value;
   return str;
 }
 
@@ -104,7 +72,7 @@ function orderDetail(obj){
   </form>
 </table>
 <table border="0" cellpadding="0" cellspacing="0" class="tb_style">
-  <form name="shanpayment" action="shanpay.php" method="post" target="_blank" >
+  <form name="shanpayment" action="get_back_info.php" method="post" target="_blank" >
     <tr>
       <td height="50"  colspan="3"class="td_title"><span class="title">雷击霹雳-订单系统</span></td>
     </tr>
@@ -113,10 +81,10 @@ function orderDetail(obj){
       <td   class="td_border">
         <select onchange="orderDetail(this)" id="opt">
         <option value ="">--请选择--</option>
-        <option <?PHP if ($stock99991 == 0){echo 'disabled="disabled"';} ?>value ="99991">PT盒子-型号1  库存<?php echo $stock99991 ?>个  </option>
-        <option <?PHP if ($stock99992 == 0){echo 'disabled="disabled"';} ?> value ="99992">PT盒子-型号2  库存<?php echo $stock99992 ?>个 </option>
-        <option <?PHP if ($stock99993 == 0){echo 'disabled="disabled"';} ?> value ="99993">PT盒子-型号3  库存<?php echo $stock99993 ?>个 </option>
-        <option <?PHP if ($stock99994 == 0){echo 'disabled="disabled"';} ?> value ="99994">PT盒子-型号4  库存<?php echo $stock99994 ?>个 </option>
+        <option value ="99991">PT盒子-型号1  </option>
+        <option value ="99992">PT盒子-型号2  </option>
+        <option value ="99993">PT盒子-型号3  </option>
+        <option value ="99994">PT盒子-型号4  </option>
         </select>
 
       </td>
@@ -135,10 +103,7 @@ function orderDetail(obj){
       <td   height="50"  class="td_border">&nbsp;</td>
       <td  class="td_border">
 	  <input id="WID_no" name="WIDout_trade_no" type="hidden" value="000000000000" size="35"  />
-	  <input  name="WIDsubject" type="hidden" value="order1" size="35" />
-	  <input name="WIDtotal_fee" type="hidden" value="0.1" size="35" />
-	  <input name="WIDbody" type="hidden" value="收银" size="35" />
-	  <input onclick="return postData()" type="submit" name="Submit" value="立即下单" class="btn_save" id="addnew"/>
+	  <input onclick="return postData()" type="submit" name="Submit" value="找回订单信息" class="btn_save" id="addnew"/>
       &nbsp;&nbsp;&nbsp;&nbsp;</td>
       <td  class="td_border">&nbsp;</td>
     </tr>
