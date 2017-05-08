@@ -74,10 +74,10 @@ function orderDetail(obj){
 <table border="0" cellpadding="0" cellspacing="0" class="tb_style">
   <form name="shanpayment" action="get_back_info.php" method="post" >
     <tr>
-      <td height="50"  colspan="3"class="td_title"><span class="title">雷击霹雳-订单系统</span></td>
+      <td height="50"  colspan="3"class="td_title"><span class="title">订单系统-找回订单信息</span></td>
     </tr>
     <tr>
-      <td   height="50"  class="td_border"><font color="#FF0000">* </font>选择商品：</td>
+      <td   height="50"  class="td_border"><font color="#FF0000">* </font>您下单时选择的商品是：</td>
       <td   class="td_border">
         <select onchange="orderDetail(this)" id="opt">
         <option value ="">--请选择--</option>
@@ -92,18 +92,18 @@ function orderDetail(obj){
     </tr>
 
     <tr>
-      <td   height="50"  class="td_border"><font color="#FF0000">* </font>请输入手机号或QQ号：</td>
+      <td   height="50"  class="td_border"><font color="#FF0000">* </font>您下单时输入的手机号或QQ号是：</td>
       <td colspan="2"  class="td_border"><input id="userphone" name="phone_no" type="text" value="" maxlength="11"  size="35" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g, ''))"  />        
-        <font color="#FF0000">* 必填</font> &nbsp;&nbsp;&nbsp;作为购买凭证</td>
+        <font color="#FF0000">* 必填</font> &nbsp;&nbsp;&nbsp;</td>
     </tr>
     <tr>
-      <td   height="50" colspan="3" class="td_border"><font color="#FF0000">* 付款后请勿关闭页面，将自动跳转到商品信息页面。</font></td>
+      <td   height="50" colspan="3" class="td_border"><font color="#FF0000"></font></td>
     </tr>
     <tr>
       <td   height="50"  class="td_border">&nbsp;</td>
       <td  class="td_border">
 	  <input id="WID_no" name="get_back_no" type="hidden" value="000000000000" size="35"  />
-	  <input onclick="return postData()" type="submit" name="Submit" value="找回订单信息" class="btn_save" id="addnew"/>
+	  <input onclick="return postData()" type="submit" name="Submit" value="找回信息" class="btn_save" id="addnew"/>
       &nbsp;&nbsp;&nbsp;&nbsp;</td>
       <td  class="td_border">&nbsp;</td>
     </tr>
