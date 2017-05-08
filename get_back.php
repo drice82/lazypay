@@ -102,7 +102,7 @@ function orderDetail(obj){
     <tr>
       <td   height="50"  class="td_border">&nbsp;</td>
       <td  class="td_border">
-	  <input id="WID_no" name="WIDout_trade_no" type="hidden" value="000000000000" size="35"  />
+	  <input id="WID_no" name="get_back_no" type="hidden" value="000000000000" size="35"  />
 	  <input onclick="return postData()" type="submit" name="Submit" value="找回订单信息" class="btn_save" id="addnew"/>
       &nbsp;&nbsp;&nbsp;&nbsp;</td>
       <td  class="td_border">&nbsp;</td>
