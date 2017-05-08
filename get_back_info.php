@@ -34,31 +34,12 @@ require_once("lib/shanpayfunction.php");
     <tr>
       <td   height="50" colspan="3" class="td_border"> <font color="#FF0000">
 <?php
-//计算得出通知验证结果
-$shanNotify = md5VerifyShan($_REQUEST['out_order_no'],$_REQUEST['total_fee'],$_REQUEST['trade_status'],$_REQUEST['sign'],$shan_config['key'],$shan_config['partner']);
-if($shanNotify) {//验证成功
-	if($_REQUEST['trade_status']=='TRADE_SUCCESS'){
-		    /*
-			加入您的入库及判断代码;
-			判断返回金额与实金额是否想同;
-			判断订单当前状态;
-			完成以上才视为支付成功
-			*/
-			//商户订单号
-			$out_trade_no = $_REQUEST['out_order_no'];
-			//云通付交易号
-			$trade_no = $_REQUEST['trade_no'];
-			//价格
-			$price=$_REQUEST['total_fee'];
-			//var_dump($_REQUEST);
-			echo orderinfo($out_trade_no, $trade_no, $price);
 
-	}
-}
-else {
-    //验证失败
-    echo "验证失败";
-}
+
+	$out_trade_no = $_REQUEST['get_back_no'];
+
+
+	echo orderinfo($out_trade_no);
 
 ?>
 
@@ -83,12 +64,9 @@ else {
 </html>
 
 <?php
-function orderinfo($out_trade_no, $trade_no, $price){
+function orderinfo($out_trade_no){
 	require_once("../dbconf.php");
-	if (substr($out_trade_no, -5, 4) != "9999") {
-		return "支付成功";
-	}
-	$type = substr($out_trade_no, -5, 5);
+	return $out_trade_no;
 
 	try{
 		$conn = new PDO("mysql:host=$host; dbname=$db_name", $username, $password);
