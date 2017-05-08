@@ -79,7 +79,7 @@ function orderinfo($out_trade_no){
 			return "地址：". $uaddr. "   用户名：". $uname. "   密码：". $upwd;
 		}
 		else {
-			return "无记录";
+			return "无记录，或订单时间超过24小时，请联系客服。";
 	
 		}
 
