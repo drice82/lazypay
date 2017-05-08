@@ -66,22 +66,14 @@ require_once("lib/shanpayfunction.php");
 <?php
 function orderinfo($out_trade_no){
 	require_once("../dbconf.php");
-	return $out_trade_no;
 
 	try{
 		$conn = new PDO("mysql:host=$host; dbname=$db_name", $username, $password);
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
-		//是否为早期订单
-		$ordertime=time()-86399;
-		$sql = "SELECT * FROM orders WHERE out_order_no='$out_trade_no' AND  pay_time<'$ordertime'";
-		$stmt = $conn->query($sql);
-		if ($stmt->rowCount() !=0){
-			return "请勿刷新";
-		}
 		
 		//是否为24小时内已有订单
 		$ordertime=time()-86400;
-		$sql = "SELECT * FROM orders WHERE out_order_no='$out_trade_no' AND pay_time>'$ordertime'";
+		$sql = "SELECT * FROM orders WHERE out_order_no LIKE %'$out_trade_no' AND pay_time>'$ordertime'";
 		$stmt = $conn->query($sql);
 		if ($stmt->rowCount() !=0){
 			$row = $stmt->fetch();
@@ -91,41 +83,7 @@ function orderinfo($out_trade_no){
 
 			return "地址：". $uaddr. "   用户名：". $uname. "   密码：". $upwd;
 		}
-		//判断库存量
-		$sql = "SELECT * FROM members WHERE enable = 0 AND type='$type'";
-		$stmt = $conn->query($sql);
-		if ($stmt->rowCount() ==0){
-			return "无库存，请联系退款";
-		}
-
-		//列出盒子信息
-		$sql = "SELECT * FROM members WHERE enable = 0 AND type='$type' limit 1";
-		$stmt = $conn->query($sql);
-		$row = $stmt->fetch();
-			$uname = $row['username'];
-			$uaddr = $row['email'];
-			$upwd= $row['password'];
-
-		//激活服务
-		$expire_time=time()+2592000;
-		$sql= "UPDATE members SET expire_time=:expire_time, enable=1 WHERE username=:username";
-		$stmt = $conn->prepare($sql);
-		$stmt->bindParam(':username', $uname);
-		$stmt->bindParam(':expire_time', $expire_time);
-		$stmt->execute();
-
-		//记录订单
-		$sql = "INSERT INTO orders (total_fee, trade_no, out_order_no, uname, upwd, uaddr, pay_time) VALUES (?,?,?,?,?,?,?)";
-		$stmt = $conn->prepare($sql);
-		$stmt->bindParam(1, $price);
-		$stmt->bindParam(2, $trade_no);
-		$stmt->bindParam(3, $out_trade_no);
-		$stmt->bindParam(4, $uname);
-		$stmt->bindParam(5, $upwd);
-		$stmt->bindParam(6, $uaddr);
-		$stmt->bindParam(7, time());
-		$stmt->execute();
-		return "*地址：".$uaddr. "   用户名：". $uname. "   密码：". $upwd;
+		
 
 	}
 	catch (PDOException $e) {
