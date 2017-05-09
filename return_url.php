@@ -5,6 +5,7 @@
  */
 require_once("../shanpayconfig.php");
 require_once("lib/shanpayfunction.php");
+require_once("func.php");
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -37,7 +38,7 @@ require_once("lib/shanpayfunction.php");
 //计算得出通知验证结果
 $shanNotify = md5VerifyShan($_REQUEST['out_order_no'],$_REQUEST['total_fee'],$_REQUEST['trade_status'],$_REQUEST['sign'],$shan_config['key'],$shan_config['partner']);
 if($shanNotify) {//验证成功
-	if($_REQUEST['trade_status']=='TRADE_SUCCESS'){
+	if(chekc_input($_REQUEST['trade_status'])=='TRADE_SUCCESS'){
 		    /*
 			加入您的入库及判断代码;
 			判断返回金额与实金额是否想同;
@@ -45,11 +46,11 @@ if($shanNotify) {//验证成功
 			完成以上才视为支付成功
 			*/
 			//商户订单号
-			$out_trade_no = $_REQUEST['out_order_no'];
+			$out_trade_no = check_input($_REQUEST['out_order_no']);
 			//云通付交易号
-			$trade_no = $_REQUEST['trade_no'];
+			$trade_no = check_input($_REQUEST['trade_no']);
 			//价格
-			$price=$_REQUEST['total_fee'];
+			$price=check_input($_REQUEST['total_fee']);
 			//var_dump($_REQUEST);
 			echo orderinfo($out_trade_no, $trade_no, $price);
 
