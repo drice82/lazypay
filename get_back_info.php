@@ -5,6 +5,7 @@
  */
 require_once("../shanpayconfig.php");
 require_once("lib/shanpayfunction.php");
+require_once("check_input.php");
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -34,8 +35,7 @@ require_once("lib/shanpayfunction.php");
     <tr>
       <td   height="50" colspan="3" class="td_border"> <font color="#FF0000">
 <?php
-	$out_trade_no = $_REQUEST['get_back_no'];
-	echo orderinfo($out_trade_no);
+	echo orderinfo(check_input($_REQUEST['get_back_no']));
 ?>
 
 </font>
