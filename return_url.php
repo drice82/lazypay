@@ -38,7 +38,7 @@ require_once("func.php");
 //计算得出通知验证结果
 $shanNotify = md5VerifyShan($_REQUEST['out_order_no'],$_REQUEST['total_fee'],$_REQUEST['trade_status'],$_REQUEST['sign'],$shan_config['key'],$shan_config['partner']);
 if($shanNotify) {//验证成功
-	if(chekc_input($_REQUEST['trade_status'])=='TRADE_SUCCESS'){
+	if(check_input($_REQUEST['trade_status'])=='TRADE_SUCCESS'){
 		    /*
 			加入您的入库及判断代码;
 			判断返回金额与实金额是否想同;
