@@ -3,9 +3,9 @@
 /* *
  * 功能：服务器同通知页面
  */
-require_once("../shanpayconfig.php");
+require_once("lib/config.php");
 require_once("lib/shanpayfunction.php");
-require_once("func.php");
+require_once("lib/func.php");
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
