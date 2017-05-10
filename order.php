@@ -8,18 +8,26 @@ try{
 	$sql = "SELECT * FROM members WHERE enable=0 AND  type='99991'";
 	$stmt = $conn->query($sql);
 	$stock99991 = $stmt->rowCount();
+	$row = $stmt->fetch();
+	$init_fee99991 = $row['init_fee'];
 
 	$sql = "SELECT * FROM members WHERE enable=0 AND  type='99992'";
 	$stmt = $conn->query($sql);
 	$stock99992 = $stmt->rowCount();
+	$row = $stmt->fetch();
+	$init_fee99992 = $row['init_fee'];
 
 	$sql = "SELECT * FROM members WHERE enable=0 AND  type='99993'";
 	$stmt = $conn->query($sql);
 	$stock99993 = $stmt->rowCount();
-
+	$row = $stmt->fetch();
+	$init_fee99993 = $row['init_fee'];
+	
 	$sql = "SELECT * FROM members WHERE enable=0 AND  type='99994'";
 	$stmt = $conn->query($sql);
 	$stock99994 = $stmt->rowCount();
+	$row = $stmt->fetch();
+	$init_fee99994 = $row['init_fee'];
 	}
 catch (PDOException $e) {
 	echo $e->getMessage();
