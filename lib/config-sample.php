@@ -16,9 +16,5 @@ $shan_config['notify_url'] = "";
 $shan_config['return_url'] = "";
 
 //↑↑↑↑↑↑↑↑↑↑请在这里配置您的基本信息↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
-//DATABASE CONNECTION VARIABLES
-$host = "127.0.0.1"; // Host name
-$username = ""; // Mysql username
-$password = ""; // Mysql password
-$db_name = ""; // Database name
+
 ?>
