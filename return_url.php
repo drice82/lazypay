@@ -128,9 +128,13 @@ function orderinfo($out_trade_no, $trade_no, $price){
 			$uname = $row['username'];
 			$uaddr = $row['email'];
 			$upwd= $row['password'];
+			$init_fee = $row['init_fee'];
+		if ($price != $init_fee) {
+			return "支付金额错误！";
+		}
 
 		//激活服务
-		$expire_time=time()+2592000;
+		$expire_time=time()+86400;
 		$sql= "UPDATE members SET expire_time=:expire_time, enable=1 WHERE username=:username";
 		$stmt = $conn->prepare($sql);
 		$stmt->bindParam(':username', $uname);
