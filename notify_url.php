@@ -2,6 +2,7 @@
 /* *
  * 功能：服务器异步通知页面
  */
+require_once("lib/dbconf.php");
 require_once("lib/config.php");
 require_once("lib/shanpayfunction.php");
 require_once("lib/func.php");
