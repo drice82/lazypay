@@ -99,7 +99,7 @@ function orderDetail(obj){
     <tr>
       <td width="210"   height="50"  class="td_border"><a href="http://www.lazypt.net"><img src="images/logo.png" border="0"></a></td>
       <td width="412"  class="td_border">&nbsp;</td>
-      <td width="178"  class="td_border"><strong><a href="http://www.lazypt.net">官方网站</a></strong></td>
+      <td width="178"  class="td_border"><strong><a href="http://www.lazypt.net/pay/get_back.php">过往订单查询</a></strong></td>
     </tr>
   </form>
 </table>
