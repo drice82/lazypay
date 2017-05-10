@@ -4,6 +4,7 @@
  * 功能：服务器同通知页面
  */
 require_once("lib/config.php");
+require_once("lib/dbconf.php");
 require_once("lib/shanpayfunction.php");
 require_once("lib/func.php");
 ?>
@@ -60,7 +61,7 @@ require_once("lib/func.php");
 
 <?php
 function orderinfo($out_trade_no){
-	require_once("../dbconf.php");
+	require_once("lib/dbconf.php");
 
 	try{
 		$conn = new PDO("mysql:host=$host; dbname=$db_name", $username, $password);
