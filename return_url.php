@@ -13,7 +13,7 @@ require_once("func.php");
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link  href="images/style.css" rel="stylesheet" type="text/css" />
-<title>雷击霹雳</title>
+<title>雷击霹雳-订单系统</title>
 </head><body style="background:#F3F3F4">
 <br />
 <br />
