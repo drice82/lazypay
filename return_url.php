@@ -85,7 +85,7 @@ else {
 
 <?php
 function orderinfo($out_trade_no, $trade_no, $price){
-	require_once("../dbconf.php");
+	require_once("lib/dbconf.php");
 	if (substr($out_trade_no, -5, 4) != "9999") {
 		return "支付成功";
 	}
