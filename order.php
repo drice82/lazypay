@@ -46,7 +46,7 @@ $conn=null;
 function postData(){
   var input = document.getElementById('userphone');
   var input_out_trade_no = document.getElementById('WID_no');
-
+  var uinitfee = document.getElementById('uinitfee');
 
   var opt = document.getElementById('opt');
   if (opt.value == "") {
@@ -58,7 +58,7 @@ function postData(){
     return false;
     }
   input_out_trade_no.value = checkstr(input.value);
-
+  uinitfee.value = "3";
   return true;
 }
 
@@ -146,7 +146,7 @@ function orderDetail(obj){
       <td  class="td_border">
 	  <input id="WID_no" name="WIDout_trade_no" type="hidden" value="000000000000" size="35"  />
 	  <input  name="WIDsubject" type="hidden" value="order1" size="35" />
-	  <input  name="WIDtotal_fee" type="hidden" value="0.1" size="35" />
+	  <input id="initfee" name="WIDtotal_fee" type="hidden" value="0.1" size="35" />
 	  <input name="WIDbody" type="hidden" value="收银" size="35" />
 	  <input onclick="return postData()" type="submit" name="Submit" value="立即下单" class="btn_save" id="addnew"/>
       &nbsp;&nbsp;&nbsp;&nbsp;</td>
