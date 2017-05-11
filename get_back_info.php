@@ -61,7 +61,7 @@ require_once("lib/func.php");
 
 <?php
 function orderinfo($out_trade_no){
-	require_once("lib/dbconf.php");
+	include("lib/dbconf.php");
 
 	try{
 		$conn = new PDO("mysql:host=$host; dbname=$db_name", $username, $password);
