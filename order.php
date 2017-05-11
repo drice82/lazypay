@@ -80,11 +80,7 @@ function postData(){
     return false;
     }
   input_out_trade_no.value = checkstr(input.value);
-  if (opt.value == "99991") { 
-	  uinitfee.value = "<?PHP echo $init_fee99991; ?>"; 
-  	if (<?PHP echo checksock(99991) != "0") {return true;}
-		
-  }
+  if (opt.value == "99991") { uinitfee.value = "<?PHP echo $init_fee99991; ?>"; }
   if (opt.value == "99992") { uinitfee.value = "<?PHP echo $init_fee99992; ?>"; }
   if (opt.value == "99993") { uinitfee.value = "<?PHP echo $init_fee99993; ?>"; }
   if (opt.value == "99994") { uinitfee.value = "<?PHP echo $init_fee99994; ?>"; }
