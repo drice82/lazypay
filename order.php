@@ -46,7 +46,7 @@ $conn=null;
 function postData(){
   var input = document.getElementById('userphone');
   var input_out_trade_no = document.getElementById('WID_no');
-  var uinitfee = document.getElementById('uinitfee');
+  var uinitfee = document.getElementById('initfee');
 
   var opt = document.getElementById('opt');
   if (opt.value == "") {
