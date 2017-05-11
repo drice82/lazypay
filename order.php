@@ -126,7 +126,7 @@ function orderDetail(obj){
       <td   class="td_border">
         <select onchange="orderDetail(this)" id="opt">
         <option value ="">--请选择--</option>
-        <option <?PHP if ($stock99991 == 0){echo 'disabled="disabled"';} ?>value ="99991">PT盒子-型号1  库存<?php echo $stock99991 ?>个  </option>
+        <option <?PHP if ($stock99991 == 0){echo 'disabled="disabled"';} ?> value ="99991">PT盒子-型号1  库存<?php echo $stock99991 ?>个  </option>
         <option <?PHP if ($stock99992 == 0){echo 'disabled="disabled"';} ?> value ="99992">PT盒子-型号2  库存<?php echo $stock99992 ?>个 </option>
         <option <?PHP if ($stock99993 == 0){echo 'disabled="disabled"';} ?> value ="99993">PT盒子-型号3  库存<?php echo $stock99993 ?>个 </option>
         <option <?PHP if ($stock99994 == 0){echo 'disabled="disabled"';} ?> value ="99994">PT盒子-型号4  库存<?php echo $stock99994 ?>个 </option>
