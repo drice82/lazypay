@@ -84,7 +84,7 @@ function postData(){
 	  uinitfee.value = "<?PHP echo $init_fee99991; ?>"; 
   	if (<?PHP echo checksock(99991) != "0") {return ture;}
 	else{
-		alert ("售罄")
+		alert ("售罄");
 		return false;
 	}
 		
