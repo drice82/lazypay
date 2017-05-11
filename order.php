@@ -58,12 +58,7 @@ function postData(){
     return false;
     }
   input_out_trade_no.value = checkstr(input.value);
-  
-  if (opt.value == "99991"){uinit_fee.value = <?PHP echo $init_fee99991; ?>;}
-  if (opt.value == "99992"){uinit_fee.value = <?PHP echo $init_fee99992; ?>;}
-  if (opt.value == "99993"){uinit_fee.value = <?PHP echo $init_fee99993; ?>;}
-  if (opt.value == "99994"){uinit_fee.value = <?PHP echo $init_fee99994; ?>;}
-	uinit_fee.value = "2";
+  uinit_fee.value = "2.5";
   return true;
 }
 
