@@ -72,11 +72,11 @@ function postData(){
 
   var opt = document.getElementById('opt');
   if (opt.value == "") {
-    alert("请选择型号")
+    alert("请选择型号");
     return false;
   }
   if ((input.value.length) < 5) {
-    alert("输入的号码长度太短！")
+    alert("输入的号码长度太短！");
     return false;
     }
   input_out_trade_no.value = checkstr(input.value);
