@@ -33,7 +33,6 @@ catch (PDOException $e) {
 	echo $e->getMessage();
 }
 $conn=null;
-
 ?>
 
 <?PHP
@@ -55,7 +54,6 @@ function checkstock($type){
 	$conn=null;
 	return $instock;
 }
-
 ?>
 
 
