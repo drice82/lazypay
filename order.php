@@ -82,7 +82,7 @@ function postData(){
   input_out_trade_no.value = checkstr(input.value);
   if (opt.value == "99991") { 
 	  uinitfee.value = "<?PHP echo $init_fee99991; ?>"; 
-  	if (<?PHP echo checkstock(99991) !=0){return true;}
+  	if (<?PHP echo checkstock(99991)?> !=0){return true;}
 	else{alert("售罄"); return false;}
   
   }
