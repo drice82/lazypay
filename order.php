@@ -36,6 +36,28 @@ $conn=null;
 
 ?>
 
+<?PHP
+function checkstock($type){
+	require_once("lib/dbconf.php");
+
+	try{
+		$conn = new PDO("mysql:host=$host; dbname=$db_name", $username, $password);
+		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
+
+		$sql = "SELECT * FROM members WHERE enable=0 AND  type='$type'";
+		$stmt = $conn->query($sql);
+		$instock = $stmt->rowCount();
+
+	}
+	catch (PDOException $e) {
+		echo $e->getMessage();
+	}
+	$conn=null;
+	return $instock;
+}
+
+?>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -58,10 +80,15 @@ function postData(){
     return false;
     }
   input_out_trade_no.value = checkstr(input.value);
-  if (opt.value == "99991") { uinitfee.value = "<?PHP echo $init_fee99991; ?>"; }
+  if (opt.value == "99991") {
+	  uinitfee.value = "<?PHP echo $init_fee99991; ?>";
+  	if (<?PHP echo checkstock(99991); ?> !="0") {return true;}
+  }
   if (opt.value == "99992") { uinitfee.value = "<?PHP echo $init_fee99992; ?>"; }
   if (opt.value == "99993") { uinitfee.value = "<?PHP echo $init_fee99993; ?>"; }
-  if (opt.value == "99994") { uinitfee.value = "<?PHP echo $init_fee99994; ?>"; }	
+  if (opt.value == "99994") { uinitfee.value = "<?PHP echo $init_fee99994; ?>"; }
+	
+  if 
   return true;
 }
 
