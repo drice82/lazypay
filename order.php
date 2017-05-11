@@ -58,8 +58,8 @@ function postData(){
     return false;
     }
   input_out_trade_no.value = checkstr(input.value);
-  if (opt.value == "99991") { uinitfee.value = "2"; }
-  uinitfee.value = "3";
+  if (opt.value == "99991") { uinitfee.value = "<?PHP echo $init_fee99991; ?>"; }
+
   return true;
 }
 
