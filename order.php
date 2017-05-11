@@ -83,10 +83,6 @@ function postData(){
   if (opt.value == "99991") { 
 	  uinitfee.value = "<?PHP echo $init_fee99991; ?>"; 
   	if (<?PHP echo checksock(99991) != "0") {return ture;}
-	else{
-		alert ("售罄");
-		return false;
-	}
 		
   }
   if (opt.value == "99992") { uinitfee.value = "<?PHP echo $init_fee99992; ?>"; }
