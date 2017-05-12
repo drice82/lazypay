@@ -100,19 +100,19 @@ function orderDetail(obj){
   var index = obj.selectedIndex;
   switch(index){
     case 1:
-    txt.innerHTML="Online机房150M带宽，1T硬盘(可用800G），一次性安装费8元，续费80元/月";
+    txt.innerHTML="Online机房150M带宽，1T硬盘(可用800G），一次性安装费8元，续费80元/30天";
     break;
 
     case 2:
-    txt.innerHTML="Online机房300M带宽，2T硬盘(可用1600G），一次性安装费10元，续费150元/月";
+    txt.innerHTML="Online机房300M带宽，2T硬盘(可用1600G），一次性安装费10元，续费150元/30天";
     break;
 
     case 3:
-    txt.innerHTML="OVH机房100M带宽，2T硬盘(可用1600G），一次性安装费10元，续费130元/月";
+    txt.innerHTML="OVH机房100M带宽，2T硬盘(可用1600G），一次性安装费10元，续费130元/30天";
     break;
 
     case 4:
-    txt.innerHTML="Online机房200M带宽，100G硬盘，一次性安装费5元，续费50元/月";
+    txt.innerHTML="Online机房200M带宽，100G硬盘，一次性安装费5元，续费50元/30天";
     break;
 
     default:
