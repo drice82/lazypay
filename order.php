@@ -140,7 +140,10 @@ function orderDetail(obj){
 <table border="0" cellpadding="0" cellspacing="0" class="tb_style">
   <form name="shanpayment" action="shanpay.php" method="post" target="_blank" >
     <tr>
-      <td height="50"  colspan="3"class="td_title"><span class="title">雷击霹雳-订单系统</span></td>
+      <td height="50"  colspan="3" class="td_title"><span class="title">雷击霹雳-订单系统</span></td>
+    </tr>
+    <tr>
+      <td   height="50" colspan="3"  class="td_border"><font color="#FF0000">* </font>选择商品：</td>
     </tr>
     <tr>
       <td   height="50"  class="td_border"><font color="#FF0000">* </font>选择商品：</td>
