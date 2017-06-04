@@ -67,8 +67,8 @@ function orderinfo($out_trade_no){
 		$conn = new PDO("mysql:host=$host; dbname=$db_name", $username, $password);
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
 		
-		//是否为24小时内已有订单
-		$ordertime=time()-86400;
+		//是否为1小时内已有订单
+		$ordertime=time()-3600;
 		$sql = "SELECT * FROM orders WHERE out_order_no LIKE '%$out_trade_no' AND pay_time>'$ordertime'";
 		$stmt = $conn->query($sql);
 		if ($stmt->rowCount() !=0){
@@ -80,7 +80,7 @@ function orderinfo($out_trade_no){
 			return "地址：". $uaddr. "   用户名：". $uname. "   密码：". $upwd;
 		}
 		else {
-			return "无记录，或订单时间超过24小时，请联系客服。";
+			return "无记录，或订单时间超过1小时，请联系客服。";
 	
 		}
 
