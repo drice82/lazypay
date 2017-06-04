@@ -32,6 +32,9 @@ docker start lazypt
 /home/ptuser/config/web/inc.php
 密码：
 /home/ptuser/config/web/.htpasswd
+内容：用户名:密文，如：
+10001:mhp9zzLd8PwaA
+不能多回车
 ```
 
 ## 配置控制程序
