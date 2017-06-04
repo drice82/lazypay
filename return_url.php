@@ -63,9 +63,7 @@ else {
 
 ?>
 
-</font><br />
-	      <p>PT盒子初始化中，请在5分钟后通过以上信息登录。</p>
-	      <p>关闭页面前请记录好登录信息。</p>
+</font>
 
   </td>
     </tr>
@@ -115,7 +113,7 @@ function orderinfo($out_trade_no, $trade_no, $price){
 			$upwd = $row['upwd'];
 			$uaddr = $row['uaddr'];
 
-			return "地址：". $uaddr. "   用户名：". $uname. "   密码：". $upwd;
+			return "地址：". $uaddr. "   用户名：". $uname. "   密码：". $upwd."<br /><p>PT盒子初始化中，请在5分钟后通过以上信息登录。</p>";
 		}
 		//判断库存量
 		$sql = "SELECT * FROM members WHERE enable = 0 AND type='$type'";
