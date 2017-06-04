@@ -38,7 +38,7 @@ function orderDetail(obj){
     break;
 
     case 2:
-    txt.innerHTML="OVH机房100M带宽，2T硬盘，130元／月";
+    txt.innerHTML="OVH机房100M带宽，2T硬盘，140元／月";
     break;
 
     case 3:
@@ -78,7 +78,7 @@ function orderDetail(obj){
     </tr>
 	  
     <tr>
-      <td   height="50" colspan="3" class="td_border"><font color="#FF0000"></font>在这里可以找回您24小时内的订单信息。</td>
+      <td   height="50" colspan="3" class="td_border"><font color="#FF0000"></font>在这里可以找回您1小时内的订单信息。</td>
     </tr>
 	  
     <tr>
