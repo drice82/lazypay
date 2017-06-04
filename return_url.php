@@ -65,6 +65,8 @@ else {
 
 </font><br />
 	      <p>PT盒子初始化中，请在5分钟后通过以上信息登录。</p>
+	      <p>关闭页面前请记录好登录信息。</p>
+
   </td>
     </tr>
 
@@ -88,7 +90,7 @@ else {
 function orderinfo($out_trade_no, $trade_no, $price){
 	require_once("lib/dbconf.php");
 	if (substr($out_trade_no, -5, 4) != "9999") {
-		return "支付成功";
+		return "支付成功！您可以关闭此页面了。";
 	}
 	$type = substr($out_trade_no, -5, 5);
 
