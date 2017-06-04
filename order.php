@@ -104,11 +104,11 @@ function orderDetail(obj){
     break;
 
     case 2:
-    txt.innerHTML="Online机房300M带宽，2T硬盘(可用1600G），一次性安装费10元，续费150元/30天";
+    txt.innerHTML="Online机房G口，2T硬盘，一次性安装费10元，续费140元/30天";
     break;
 
     case 3:
-    txt.innerHTML="OVH机房100M带宽，2T硬盘(可用1600G），一次性安装费10元，续费130元/30天";
+    txt.innerHTML="OVH机房100M带宽，2T硬盘，一次性安装费10元，续费120元/30天";
     break;
 
     case 4:
