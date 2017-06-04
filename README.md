@@ -23,4 +23,22 @@ docker create --name=lazypt \
 -p 51413:51413 -p 6881:6881/udp \
 drice64/lazypt:0.2
 
+docker start lazypt
+
+```
+### 配置web数据库信息
+```
+数据库：
+/home/ptuser/config/web/inc.php
+密码：
+/home/ptuser/config/web/.htpasswd
+```
+
+## 配置控制程序
+```
+文件放置在：
+/home/lazypt/watch.py
+配置用户名和数据库
+设定定时执行
+* * * * * python /home/lazypt/watch.py
 ```
