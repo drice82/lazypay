@@ -181,7 +181,7 @@ function orderDetail(obj){
         <font color="#FF0000">* 必填</font> &nbsp;&nbsp;&nbsp;作为购买凭证</td>
     </tr>
     <tr>
-      <td   height="50" colspan="3" class="td_border"><font color="#FF0000">* 付款后请勿关闭页面，将自动跳转到商品信息页面。</font></td>
+      <td   height="50" colspan="3" class="td_border"><font color="#FF0000">* 请在电脑上操作，付款后请勿关闭页面，将自动跳转到商品信息页面。</font></td>
     </tr>
     <tr>
       <td   height="50"  class="td_border">&nbsp;</td>
