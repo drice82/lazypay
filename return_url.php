@@ -113,7 +113,7 @@ function orderinfo($out_trade_no, $trade_no, $price){
 			$upwd = $row['upwd'];
 			$uaddr = $row['uaddr'];
 
-			return "PT盒子初始化中，请在5分钟后通过以上信息登录：<br />地址：". $uaddr. "   用户名：". $uname. "   密码：". $upwd ;
+			return "PT盒子初始化中，请在5分钟后通过以下信息登录：<br />地址：". $uaddr. "   用户名：". $uname. "   密码：". $upwd ;
 		}
 		//判断库存量
 		$sql = "SELECT * FROM members WHERE enable = 0 AND type='$type'";
@@ -153,7 +153,7 @@ function orderinfo($out_trade_no, $trade_no, $price){
 		$stmt->bindParam(6, $uaddr);
 		$stmt->bindParam(7, time());
 		$stmt->execute();
-		return "PT盒子初始化中，请在5分钟后通过以上信息登录：<br />*地址：".$uaddr. "   用户名：". $uname. "   密码：". $upwd;
+		return "PT盒子初始化中，请在5分钟后通过以下信息登录：<br />*地址：".$uaddr. "   用户名：". $uname. "   密码：". $upwd;
 
 	}
 	catch (PDOException $e) {
