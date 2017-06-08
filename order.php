@@ -104,19 +104,19 @@ function orderDetail(obj){
   var index = obj.selectedIndex;
   switch(index){
     case 1:
-    txt.innerHTML="Online机房150M带宽，1T硬盘(可用800G），一次性安装费10元，续费<?PHP echo $init_fee99991; ?>元/30天";
+    txt.innerHTML="Online机房150M带宽，1T硬盘(可用800G），一次性安装费<?PHP echo $init_fee99991; ?>元，续费<?PHP echo $price_99991; ?>元/30天";
     break;
 
     case 2:
-    txt.innerHTML="Online机房G口，2T硬盘，一次性安装费10元，续费<?PHP echo $init_fee99992; ?>元/30天";
+    txt.innerHTML="Online机房G口，2T硬盘，一次性安装费<?PHP echo $init_fee99992; ?>元，续费<?PHP echo $price_99992; ?>元/30天";
     break;
 
     case 3:
-    txt.innerHTML="OVH机房100M带宽，2T硬盘，一次性安装费10元，续费200元/30天";
+    txt.innerHTML="OVH机房100M带宽，2T硬盘，一次性安装费<?PHP echo $init_fee99993; ?>元，续费<?PHP echo $price_99993; ?>元/30天";
     break;
 
     case 4:
-    txt.innerHTML="Online机房200M带宽，100G硬盘，一次性安装费10元，续费200元/30天";
+    txt.innerHTML="Online机房200M带宽，100G硬盘，一次性安装费<?PHP echo $init_fee99994; ?>元，续费<?PHP echo $price_99994; ?>元/30天";
     break;
 
     default:
