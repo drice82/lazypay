@@ -10,24 +10,28 @@ try{
 	$stock99991 = $stmt->rowCount();
 	$row = $stmt->fetch();
 	$init_fee99991 = $row['init_fee'];
+	$price_99991 = $row['price'];
 
 	$sql = "SELECT * FROM members WHERE enable=0 AND  type='99992'";
 	$stmt = $conn->query($sql);
 	$stock99992 = $stmt->rowCount();
 	$row = $stmt->fetch();
 	$init_fee99992 = $row['init_fee'];
+	$price_99992 = $row['price'];
 
 	$sql = "SELECT * FROM members WHERE enable=0 AND  type='99993'";
 	$stmt = $conn->query($sql);
 	$stock99993 = $stmt->rowCount();
 	$row = $stmt->fetch();
 	$init_fee99993 = $row['init_fee'];
+	$price_99993 = $row['price'];
 	
 	$sql = "SELECT * FROM members WHERE enable=0 AND  type='99994'";
 	$stmt = $conn->query($sql);
 	$stock99994 = $stmt->rowCount();
 	$row = $stmt->fetch();
 	$init_fee99994 = $row['init_fee'];
+	$price_99994 = $row['price'];
 	}
 catch (PDOException $e) {
 	echo $e->getMessage();
@@ -100,19 +104,19 @@ function orderDetail(obj){
   var index = obj.selectedIndex;
   switch(index){
     case 1:
-    txt.innerHTML="Online机房150M带宽，1T硬盘(可用800G），一次性安装费8元，续费80元/30天";
+    txt.innerHTML="Online机房150M带宽，1T硬盘(可用800G），一次性安装费".<?PHP echo $init_fee99991; ?>."元，续费".<?PHP echo $price_99991; ?>."元/30天";
     break;
 
     case 2:
-    txt.innerHTML="Online机房G口，2T硬盘，一次性安装费10元，续费140元/30天";
+    txt.innerHTML="Online机房G口，2T硬盘，一次性安装费".<?PHP echo $init_fee99992; ?>."元，续费".<?PHP echo $price_99992; ?>."元/30天";
     break;
 
     case 3:
-    txt.innerHTML="OVH机房100M带宽，2T硬盘，一次性安装费10元，续费120元/30天";
+    txt.innerHTML="OVH机房100M带宽，2T硬盘，一次性安装费".<?PHP echo $init_fee99993; ?>."元，续费".<?PHP echo $price_99993; ?>."元/30天";
     break;
 
     case 4:
-    txt.innerHTML="Online机房200M带宽，100G硬盘，一次性安装费5元，续费50元/30天";
+    txt.innerHTML="Online机房200M带宽，100G硬盘，一次性安装费".<?PHP echo $init_fee99994; ?>."元，续费".<?PHP echo $price_99994; ?>."元/30天";
     break;
 
     default:
