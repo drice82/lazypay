@@ -104,11 +104,11 @@ function orderDetail(obj){
   var index = obj.selectedIndex;
   switch(index){
     case 1:
-    txt.innerHTML="Online机房150M带宽，1T硬盘(可用800G），一次性安装费10元，续费200元/30天";
+    txt.innerHTML="Online机房150M带宽，1T硬盘(可用800G），一次性安装费10元，续费<?PHP echo $init_fee99991; ?>元/30天";
     break;
 
     case 2:
-    txt.innerHTML="Online机房G口，2T硬盘，一次性安装费10元，续费200元/30天";
+    txt.innerHTML="Online机房G口，2T硬盘，一次性安装费10元，续费<?PHP echo $init_fee99992; ?>元/30天";
     break;
 
     case 3:
