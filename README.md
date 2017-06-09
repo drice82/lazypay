@@ -26,6 +26,10 @@ drice64/lazypt:0.2
 docker start lazypt
 
 ```
+### 进入docker
+```
+docker exec -it lazypt /bin/bash
+```
 ### 配置web数据库信息
 ```
 数据库：
