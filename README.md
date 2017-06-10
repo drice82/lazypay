@@ -55,6 +55,12 @@ $username='10001';
 文件放置在：
 /home/lazypt/watch.py
 https://github.com/drice82/docker-rutorrent/raw/master/files/watch.py
+
+python 库：
+apt-get update -y
+apt-get install -y python-pip python-lxml python-dev libmysqlclient-dev
+pip install mysql-python htpasswd
+
 配置用户名和数据库
 设定定时执行
 * * * * * python /home/lazypt/watch.py
