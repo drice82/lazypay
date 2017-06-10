@@ -34,6 +34,15 @@ docker exec -it lazypt /bin/bash
 ```
 数据库：
 /home/ptuser/config/web/inc.php
+
+<?php
+$sqlhost='localhost';
+$sqluser='root';
+$sqlpwd='';
+$sqldb='';
+$username='10001';
+?>
+
 密码：
 /home/ptuser/config/web/.htpasswd
 内容：用户名:密文，如：
